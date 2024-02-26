@@ -1,0 +1,15 @@
+# uncomment below 3 lines in production to redirect site to https and change address
+# RewriteCond %{SERVER_PORT} 80
+# RewriteEngine On
+# RewriteRule ^(.*)$ https://yourdomain.com/$1 [R,L]
+
+Options -Indexes
+
+<Files "event.sqlite3">
+    Require all denied
+</Files>
+
+# comment below 3 lines to access phpliteadmin
+# <Files "phpliteadmin.php">
+#    Require all denied
+# </Files>
