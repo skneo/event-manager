@@ -1,6 +1,10 @@
 <?php
 $title = 'Login';
 session_start();
+$cookie_name = "qiurypsfgalvcbnz";
+if (isset($_COOKIE[$cookie_name]) and $_COOKIE[$cookie_name] == "4893146254691576") {
+	$_SESSION['eventLogin'] = true;
+}
 if (isset($_SESSION['eventLogin'])) {
 	header('Location: ../index.php');
 	exit;
@@ -19,6 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		if ($row['username'] == $username and $row['password'] == $password) {
 			$_SESSION['eventLogin'] = true;
 			$_SESSION['username'] = $username;
+			$cookie_value = "4893146254691576";
+			//set cookie to remain loggedin for a week
+			setcookie($cookie_name, $cookie_value, time() + (86400 * 90), "/"); // 86400 = 1 day
+
 			header('Location: ../index.php');
 			exit;
 		} else {

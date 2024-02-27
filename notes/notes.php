@@ -64,7 +64,6 @@ include '../components/header.php';
     $created_on = $row['created_on'];
     echo "
       <b> $i. $title</b>
-      <p> Created On: $created_on </p>
       <p style='white-space: pre-wrap;'>$body</p>
       <a href='note.php?edit_note=$id'><i class='bi bi-pencil-square'></i></a>
       <a href='notes.php?trash_note=$id' class='ms-5' onclick=\"return confirm('Sure to trash ?')\"><i class='bi bi-trash3-fill text-danger'></i></a>
