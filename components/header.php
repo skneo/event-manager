@@ -17,7 +17,7 @@ $base_url = 'http://localhost/event-manager';
 </head>
 
 <body>
-	<nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+	<nav class='navbar navbar-expand-lg navbar-dark bg-dark sticky-top'>
 		<div class='container-fluid'>
 			<a class='navbar-brand' href='<?php echo "$base_url/index.php" ?>'>Event Manager</a>
 			<!-- <img src='images/logo.png' alt='BrandName' width='30' height='30'> -->
@@ -37,6 +37,9 @@ $base_url = 'http://localhost/event-manager';
 								</li>
 								<li class='nav-item active'>
 									<a class='nav-link active' href='$base_url/guests/guests.php'>Guests</a>
+								</li>
+								<li class='nav-item active'>
+									<a class='nav-link active' href='$base_url/guests2/guests.php'>Jamat</a>
 								</li>
 								<li class='nav-item active'>
 									<a class='nav-link active' href='$base_url/files/files.php'>Files</a>
@@ -65,25 +68,6 @@ $base_url = 'http://localhost/event-manager';
 			</div>
 		</div>
 	</nav>
-	<style>
-		body {
-			font-family: 'Poppins', sans-serif;
-		}
-
-		.dropdown:hover .dropdown-menu {
-			display: block;
-		}
-
-		@media only screen and (min-width: 960px) {
-			.navbar .navbar-nav .nav-item .nav-link {
-				padding: 0 0.5em;
-			}
-
-			.navbar .navbar-nav .nav-item:not(:last-child) .nav-link {
-				border-right: 1px solid #f8efef;
-			}
-		}
-	</style>
 	<?php
 	if (isset($_SESSION['alert'])) {
 		$alert_type = $_SESSION['alert'][0];

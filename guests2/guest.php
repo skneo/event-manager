@@ -22,10 +22,10 @@ if (isset($_POST['address'])) {
     // Check if note ID is provided
     if (isset($guest_id)) {
         // Update existing note
-        $sql = "UPDATE guests SET name = '$name', address = '$address', phone = '$phone', location = '$location', invited='$invited', remark = '$remark' WHERE id = '$guest_id'";
+        $sql = "UPDATE guests2 SET name = '$name', address = '$address', phone = '$phone', location = '$location', invited='$invited', remark = '$remark' WHERE id = '$guest_id'";
     } else {
         // Insert new note
-        $sql = "INSERT INTO guests VALUES (NULL, '$name', '$address', '$phone','$location','$remark','No')";
+        $sql = "INSERT INTO guests2 VALUES (NULL, '$name', '$address', '$phone','$location','$remark','No')";
     }
 
     $ret = $db->exec($sql);
@@ -42,7 +42,7 @@ if (isset($_POST['address'])) {
 // Fetch note information if editing an existing note
 if (isset($_GET['edit_guest'])) {
     $edit_guest = validate($_GET['edit_guest']);
-    $sql = "SELECT * FROM guests WHERE id = '$edit_guest'";
+    $sql = "SELECT * FROM guests2 WHERE id = '$edit_guest'";
     $result = $db->query($sql);
     $guest = $result->fetchArray(SQLITE3_ASSOC);
     $name = $guest['name'];
@@ -56,7 +56,7 @@ include '../components/header.php';
 
 <div class="container my-3">
     <a href="#" onclick="window.history.back()" class=" btn btn-success mb-3 btn-sm">Back</a>
-    <h4><?php echo isset($guest) ? 'Edit Guest' : 'Add New Guest'; ?></h4>
+    <h4><?php echo isset($guest) ? 'Edit Guest' : 'Add New Guest'; ?> in Jamat</h4>
     <form method='POST'>
         <div class="row">
             <div class='mb-3'>

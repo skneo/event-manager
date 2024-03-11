@@ -13,6 +13,7 @@ include 'components/header.php';
   <a href="notes/notes.php" class="btn btn-outline-primary w-100 mb-3">Notes</a>
   <a href="expenses/expenses.php" class="btn btn-outline-primary w-100 mb-3">Expenses</a>
   <a href="guests/guests.php" class="btn btn-outline-primary w-100 mb-3">Guests</a>
+  <a href="guests2/guests.php" class="btn btn-outline-primary w-100 mb-3">Jamat</a>
   <a href="files/files.php" class="btn btn-outline-primary w-100 mb-3">Files</a>
 </div>
 

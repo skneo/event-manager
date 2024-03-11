@@ -7,13 +7,13 @@ include '../components/validate.php';
 //mark invited
 if (isset($_GET['inviteGuest'])) {
   $inviteGuest = validate($_GET['inviteGuest']);
-  $sql = "UPDATE guests SET invited = 'Yes' WHERE id = '$inviteGuest'";
+  $sql = "UPDATE guests2 SET invited = 'Yes' WHERE id = '$inviteGuest'";
   $result = $db->exec($sql);
   if (!$result) {
     // echo $db->lastErrorMsg();
   } else {
     $inviteGuest = validate($_GET['inviteGuest']);
-    $sql = "SELECT * FROM guests WHERE id = '$inviteGuest'";
+    $sql = "SELECT * FROM guests2 WHERE id = '$inviteGuest'";
     $result = $db->query($sql);
     $guest = $result->fetchArray(SQLITE3_ASSOC);
     $_SESSION['alert'] = ["success", $guest['name'] . " marked invited successfully"];
@@ -42,7 +42,7 @@ include '../components/header.php';
     </thead>
     <tbody>
       <?php
-      $sql = "SELECT * from guests";
+      $sql = "SELECT * from guests2";
       $result = $db->query($sql);
       $i = 0;
       while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
